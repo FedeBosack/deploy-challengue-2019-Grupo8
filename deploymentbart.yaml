@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: bart-deploy
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: bart
+    spec:
+      containers:
+      - name: bart
+        image: nginxdemos/hello:latest
+        ports:
+        - containerPort: 80

@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: simpson-ingress
+spec:
+  rules:
+  - host: my.simpson.example
+    http:
+      paths:
+      - path: /bart
+        backend:
+          serviceName: bart-svc
+          servicePort: 80
+      - path: /lisa
+        backend:
+          serviceName: lisa-svc
+          servicePort: 80

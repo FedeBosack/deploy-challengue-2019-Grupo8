@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: lisa-deploy
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: lisa
+    spec:
+      containers:
+      - name: lisa
+        image: nginxdemos/hello:latest
+        ports:
+        - containerPort: 80
